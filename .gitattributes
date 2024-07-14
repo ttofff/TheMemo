@@ -1,0 +1,13 @@
+Content filter=lfs diff=lfs merge=lfs -text
+Saved filter=lfs diff=lfs merge=lfs -text
+Binaries filter=lfs diff=lfs merge=lfs -text
+Intermediate filter=lfs diff=lfs merge=lfs -text
+TheMemo.sln filter=lfs diff=lfs merge=lfs -text
+TheMemo.uproject filter=lfs diff=lfs merge=lfs -text
+Config filter=lfs diff=lfs merge=lfs -text
+README.md filter=lfs diff=lfs merge=lfs -text
+Build filter=lfs diff=lfs merge=lfs -text
+DerivedDataCache filter=lfs diff=lfs merge=lfs -text
+Plugins filter=lfs diff=lfs merge=lfs -text
+Source filter=lfs diff=lfs merge=lfs -text
+TheMemo.sln.DotSettings.user filter=lfs diff=lfs merge=lfs -text
