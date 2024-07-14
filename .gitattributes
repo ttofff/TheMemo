@@ -11,3 +11,4 @@ DerivedDataCache filter=lfs diff=lfs merge=lfs -text
 Plugins filter=lfs diff=lfs merge=lfs -text
 Source filter=lfs diff=lfs merge=lfs -text
 TheMemo.sln.DotSettings.user filter=lfs diff=lfs merge=lfs -text
+libMicrosoft.CognitiveServices.Speech.core.a filter=lfs diff=lfs merge=lfs -text
