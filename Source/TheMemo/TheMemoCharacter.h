@@ -35,6 +35,9 @@ class ATheMemoCharacter : public ACharacter
 public:
 	ATheMemoCharacter();
 
+	UFUNCTION(BlueprintCallable, Category = "DayOfWeek")
+	FString GetDayOfWeek();
+	
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;

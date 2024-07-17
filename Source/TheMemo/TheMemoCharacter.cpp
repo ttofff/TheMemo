@@ -9,6 +9,8 @@
 #include "GameFramework/Controller.h"
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "Runtime/Core/Public/Misc/DateTime.h"
+#include "Kismet/KismetStringLibrary.h"
 #include "InputActionValue.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
@@ -47,6 +49,50 @@ ATheMemoCharacter::ATheMemoCharacter()
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
+}
+
+FString ATheMemoCharacter::GetDayOfWeek()
+{
+	FDateTime Time = FDateTime::Now();
+	FString CAndYear = FString::FromInt(Time.GetYear());
+	FString Century = UKismetStringLibrary::GetSubstring(CAndYear, 0, 2);
+	FString Y = UKismetStringLibrary::GetSubstring(CAndYear, 2, 4);
+	int32 C = FCString::Atoi(*Century);
+	int32 Year = FCString::Atoi(*Y);
+	int32 Month = Time.GetMonth();
+	int32 Day = Time.GetDay();
+
+	int32 W = (static_cast<int>(C / 4.0) - 2 * C + Year + static_cast<int>(Year / 4.0) + static_cast<int>(26 * (Month + 1) / 10.0) + Day - 1)%7;
+
+	FString Weekday;
+	
+	if (W) {
+		switch(W) {
+		case 0 :
+			Weekday = TEXT("周日");
+			//此处也可写为Weekday = L("星期日");
+			break;
+		case 1:
+			Weekday = TEXT("周一");
+			break;
+		case 2:
+			Weekday = TEXT("周二");
+			break;
+		case 3:
+			Weekday = TEXT("周三");
+			break;
+		case 4:
+			Weekday = TEXT("周四");
+			break;
+		case 5:
+			Weekday = TEXT("周五");
+			break;
+		case 6:
+			Weekday = TEXT("周六");
+			break;
+		}
+	}
+	return Weekday;
 }
 
 void ATheMemoCharacter::BeginPlay()
