@@ -36,7 +36,7 @@ public:
 	ATheMemoCharacter();
 
 	UFUNCTION(BlueprintCallable, Category = "DayOfWeek")
-	FString GetDayOfWeek();
+	static FString GetDayOfWeek();
 	
 protected:
 	// APawn interface
