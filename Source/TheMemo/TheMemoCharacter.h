@@ -37,6 +37,9 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "DayOfWeek")
 	static FString GetDayOfWeek();
+
+	UFUNCTION(BlueprintCallable)
+	static float GetDistance(float Lat1, float Lon1, float Lat2, float Lon2);
 	
 protected:
 	// APawn interface

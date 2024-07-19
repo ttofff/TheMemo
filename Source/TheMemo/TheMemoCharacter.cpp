@@ -11,6 +11,7 @@
 #include "EnhancedInputSubsystems.h"
 #include "Runtime/Core/Public/Misc/DateTime.h"
 #include "Kismet/KismetStringLibrary.h"
+#include "Math/UnrealMathUtility.h"
 #include "InputActionValue.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
@@ -93,6 +94,28 @@ FString ATheMemoCharacter::GetDayOfWeek()
 		}
 	}
 	return Weekday;
+}
+
+float ATheMemoCharacter::GetDistance(float Lat1, float Lon1, float Lat2, float Lon2)
+{
+	// 将经纬度转换为弧度
+	float DegToRad = PI / 180.0f;
+	float RadToDeg = 180.0f / PI;
+	float R = 6371.0f; // 地球半径（单位：公里）
+
+	float Lat1Rad = Lat1 * DegToRad;
+	float Lon1Rad = Lon1 * DegToRad;
+	float Lat2Rad = Lat2 * DegToRad;
+	float Lon2Rad = Lon2 * DegToRad;
+
+	// 使用球面三角法计算距离
+	float DeltaLat = Lat2Rad - Lat1Rad;
+	float DeltaLon = Lon2Rad - Lon1Rad;
+	float A = FMath::Square(FMath::Sin(DeltaLat / 2.0f)) + FMath::Cos(Lat1Rad) * FMath::Cos(Lat2Rad) * FMath::Square(FMath::Sin(DeltaLon / 2.0f));
+	float C = 2.0f * FMath::Atan2(FMath::Sqrt(A), FMath::Sqrt(1.0f - A));
+	float Distance = R * C;
+
+	return Distance;
 }
 
 void ATheMemoCharacter::BeginPlay()

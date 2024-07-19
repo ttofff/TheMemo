@@ -1,0 +1,29 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "PhoneAuthCode",
+	"Description": "Use SMS messages to verify user's identity",
+	"Category": "Other",
+	"CreatedBy": "inite",
+	"CreatedByURL": "",
+	"DocsURL": "https://blog.csdn.net/qq_36409711/article/details/107199014",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/ad53b85f109c87b4a8bf580898186114",
+	"SupportURL": "",
+	"EngineVersion": "5.3.0",
+	"CanContainContent": true,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "PhoneAuthCode",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [
+				"Win64",
+				"Mac",
+				"IOS",
+				"Android"
+			]
+		}
+	]
+}
