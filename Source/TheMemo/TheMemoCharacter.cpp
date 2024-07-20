@@ -101,7 +101,7 @@ float ATheMemoCharacter::GetDistance(float Lat1, float Lon1, float Lat2, float L
 	// 将经纬度转换为弧度
 	float DegToRad = PI / 180.0f;
 	float RadToDeg = 180.0f / PI;
-	float R = 6371.0f; // 地球半径（单位：公里）
+	float R = 6371000.0f; // 地球半径（单位：米）
 
 	float Lat1Rad = Lat1 * DegToRad;
 	float Lon1Rad = Lon1 * DegToRad;
