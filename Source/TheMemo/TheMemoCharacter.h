@@ -40,7 +40,7 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	static float GetDistance(float Lat1, float Lon1, float Lat2, float Lon2);
-	
+
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
